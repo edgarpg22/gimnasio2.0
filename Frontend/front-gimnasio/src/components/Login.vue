@@ -9,7 +9,7 @@
             </div>
             <div class="mt-12 flex flex-col items-center">
                 <h1 class="text-2xl xl:text-3xl font-extrabold">
-                    Registrate
+                    Inicia Sesión
                 </h1>
                 <div class="w-full flex-1 mt-8">
                     <div class="flex flex-col items-center">
@@ -73,7 +73,7 @@
                                 <path d="M20 8v6M23 11h-6" />
                             </svg>
                             <span class="ml-3">
-                                Registrate
+                                Inicia Sesión
                             </span>
                         </button>
                         <p class="mt-6 text-xs text-gray-600 text-center">
