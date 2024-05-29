@@ -32,7 +32,7 @@
                                 </svg>
                             </div>
                             <span class="ml-4">
-                                Registrate con Google
+                                Inicia Sesión con Google
                             </span>
                         </button>
 
@@ -45,7 +45,7 @@
                                 </svg>
                             </div>
                             <span class="ml-4">
-                                Registrate con GitHub
+                                Inicia Sesión con GitHub
                             </span>
                         </button>
                     </div>
@@ -53,7 +53,7 @@
                     <div class="my-12 border-b text-center">
                         <div
                             class="leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform translate-y-1/2">
-                            Registrate con tu correo
+                            Inicia Sesión con tu correo
                         </div>
                     </div>
 
@@ -92,7 +92,7 @@
         </div>
         <div class="flex-1 bg-indigo-100 text-center hidden lg:flex">
             <div class="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat"
-                style="background-image: url('https://storage.googleapis.com/devitary-image-host.appspot.com/15848031292911696601-undraw_designer_life_w96d.svg');">
+                style="background-image: url('https://www.uvp.mx/assets/img/servicios/gym_01.png');">
             </div>
         </div>
     </div>

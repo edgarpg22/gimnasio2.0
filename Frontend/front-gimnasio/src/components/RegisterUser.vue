@@ -11,7 +11,7 @@
                     Registrate
                 </h1>
                 <div class="w-full flex-1 mt-8">
-                    <!-- <div class="flex flex-col items-center">
+                    <div class="flex flex-col items-center">
                         <button
                             class="w-full max-w-xs font-bold shadow-sm rounded-lg py-3 bg-indigo-100 text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline">
                             <div class="bg-white p-2 rounded-full">
@@ -54,23 +54,22 @@
                             class="leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform translate-y-1/2">
                             Registrate con tu correo
                         </div>
-                    </div> -->
+                    </div>
 
                     <div class="mx-auto max-w-xs">
+                        <input name="name" type="name"
+                            class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                            placeholder="Nombre Completo">
                         
-                        <input name="email" type="email" autocomplete="email" required=""
-                            class="block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-black focus:ring-offset-1"
-                            placeholder="Nombre Completo" value="">
+                        <input name="lastName" type="lastName" 
+                            class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
+                            placeholder="Primer Apellido">
                         
-                        <input name="password" type="email" autocomplete="current-password" required=""
-                            class="mt-2 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-black focus:ring-offset-1"
-                            placeholder="Primer Apellido" value="">
-                        
-                        <input name="password" type="email" autocomplete="current-password" required=""
-                            class="mt-2 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-black focus:ring-offset-1"
-                            placeholder="Segundo Apellido" value="">
+                        <input name="lastName" type="lastName" 
+                            class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
+                            placeholder="Segundo Apellido">
 
-                        <select id="countries" class="mt-2 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-black focus:ring-offset-1">
+                        <select id="countries" class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5">
                         <option selected>Selecciona Genero</option>
                         <option value="">Hombre</option>
                         <option value="">Mujer</option>
@@ -78,17 +77,33 @@
                        
                         </select>
                         
-                        <input name="password" type="date" autocomplete="current-password" required=""
-                            class="mt-2 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-black focus:ring-offset-1"
-                            placeholder="" value="">
+                        <input name="date" type="date"
+                            class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
+                            placeholder="">
                         
-                        <select id="countries" class="mt-2 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-black focus:ring-offset-1">
+                        <select id="countries" class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5">
                         <option selected>Selecciona Tipo de Sangre</option>
-                        <option value="">AB+</option>
-                        <option value="">AB-</option>
+                        <option value="">A+</option>
+                        <option value="">A-</option>
+                        <option value="">B+</option>
+                        <option value="">B-</option>
                         <option value="">O+</option>
-                        <option value="">0-</option>
+                        <option value="">O-</option>
                         </select>
+
+                        <input name="email" type="email"
+                            class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
+                            placeholder="Correo">
+                        
+                        <input name="password" type="password"
+                            class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
+                            placeholder="Contraseña">
+                            
+                        <lavel for="" class= "font-medium">Fotografia</lavel>
+
+                        <input name="file" type="file"
+                            class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                            placeholder="Fotografia">  
                         <button
                             class="mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                             <svg class="w-6 h-6 -ml-2" fill="none" stroke="currentColor" stroke-width="2"
@@ -117,7 +132,7 @@
         </div>
         <div class="flex-1 bg-indigo-100 text-center hidden lg:flex">
             <div class="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat"
-                style="background-image: url('https://storage.googleapis.com/devitary-image-host.appspot.com/15848031292911696601-undraw_designer_life_w96d.svg');">
+                style="background-image: url('https://www.uvp.mx/assets/img/servicios/gym_01.png');">
             </div>
         </div>
     </div>
