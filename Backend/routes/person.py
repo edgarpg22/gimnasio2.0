@@ -29,9 +29,9 @@ def bienvenido():
 def getPerson():
     return persons
 
-@person.get("/person/{person_id}", tags=['Personas'])
+@person.post("/person/{person_id}", tags=['Personas'])
 
-def getPerson(person_id: str):
+def postPerson(person_id: str):
     for person in persons:
         if person.id == person_id:
             return person

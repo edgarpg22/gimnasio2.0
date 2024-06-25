@@ -23,9 +23,9 @@ def bienvenido():
 def getUser():
     return users
 
-@user.get("/users/{user_id}", tags=['Usuarios'])
+@user.post("/users/{user_id}", tags=['Usuarios'])
 
-def getUser(user_id: str):
+def postUser(user_id: str):
     for user in users:
         if user.id == user_id:
             return user
