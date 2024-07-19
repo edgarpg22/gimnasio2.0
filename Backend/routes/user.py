@@ -3,10 +3,10 @@ from sqlalchemy.orm import Session
 from cryptography.fernet import Fernet
 import crud.users, config.db, schemas.users, models.users
 from typing import List
-from jwt_config import solicita_token
-from portadortoken import Portador
 from fastapi.responses import JSONResponse
 import json
+from jwt_config import solicita_token
+from portaortoken import Portador
 
 key = Fernet.generate_key()
 f = Fernet(key)
@@ -64,13 +64,14 @@ def delete_user(id:int, db: Session=Depends(get_db)):
         raise HTTPException(status_code=404, detail="Usuario no existe, no se pudo eliminar ")
     return db_users
 
-@user.post("/login/", response_model=schemas.users.UserLogin, tags=["User login"])
-def read_credentials(usuario: schemas.users.UserLogin, db: Session = Depends(get_db)):
-    db_credentials = crud.users.get_users_by_credentials(db, username=usuario.Nombre_Usuario,
-                                                         correo=usuario.Correo_Electronico,
-                                                         telefono=usuario.Numero_Telefonico_Movil,
-                                                         password=usuario.Contrasena)
+# Ruta del login
+@user.post("/login/", response_model=schemas.users.UserLogin, tags=['User Login'])
+def read_credentials(usuario:schemas.users.UserLogin, db: Session=Depends(get_db)):
+    db_credentials = crud.users.get_user_by_credentials(db, username= usuario.Nombre_Usuario,
+                                                        correo=usuario.Correo_Electronico,
+                                                        telefono=usuario.Numero_Telefononico_Movil,
+                                                        password=usuario.Contrasena)
     if db_credentials is None:
-        return JSONResponse(content={'mesaje': 'Acceso denegado'}, status_code =404)
-    token:str=solicita_token(usuario.dict())
+        return JSONResponse(content={'mensaje':'Acceso denegado'},status_code=404)
+    token:str = solicita_token(usuario.dict())
     return JSONResponse(status_code=200, content=token)

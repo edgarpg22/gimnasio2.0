@@ -5,7 +5,7 @@ from datetime import datetime
 class RolBase(BaseModel):
     Nombre:str
     Descripcion:str
-    Contrasena:str
+    # Contrasena:str
     Estatus:bool
     Fecha_Registro: datetime
     Fecha_Actualizacion: datetime
@@ -20,3 +20,5 @@ class Rol(RolBase):
     ID:int
     class Config:
         orm_mode = True
+
+        

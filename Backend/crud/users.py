@@ -3,7 +3,7 @@ import schemas.users
 from sqlalchemy.orm import Session
 import models, schemas
 
-# Busqueda por ID
+# Busqueda por id
 def get_user(db:Session, id: int):
     return db.query(models.users.User).filter(models.users.User.ID == id).first()
 
@@ -11,32 +11,33 @@ def get_user(db:Session, id: int):
 def get_user_by_usuario(db:Session, usuario: str):
     return db.query(models.users.User).filter(models.users.User.Nombre_Usuario == usuario).first()
 
-def get_users_by_credentials(db:Session, username: str, correo:str, telefono:str, password:str):
+# Credenciales de acceso
+def get_user_by_credentials(db:Session, username:str, correo:str, telefono:str, password:str):
     return db.query(models.users.User).filter((models.users.User.Nombre_Usuario == username) |
                                               (models.users.User.Correo_Electronico == correo) |
-                                              (models.users.User.Numero_Telefonico_Movil == telefono),
-                                              (models.users.User.Contrasena == password)).first()
+                                              (models.users.User.Numero_Telefononico_Movil == telefono),
+                                              models.users.User.Contrasena == password).first()
+
 # Buscar todos los usuarios
 def get_users(db:Session, skip: int=0, limit:int=10):
     return db.query(models.users.User).offset(skip).limit(limit).all()
 
 # Crear nuevo usuario
 def create_user(db:Session, user: schemas.users.UserCreate):
-    db_user = models.users.User(Persona_ID= user.Persona_ID,
-                                Nombre_Usuario=user.Nombre_Usuario,
+    db_user = models.users.User(Persona_Id=user.Persona_Id,
+                                Nombre_Usuario=user.Nombre_Usuario, 
                                 Correo_Electronico=user.Correo_Electronico,
-                                Contrasena=user.Contrasena,
-                                Numero_Telefonico_Movil=user.Numero_Telefonico_Movil,
-                                Estatus=user.Estatus,
-                                Fecha_Registro=user.Fecha_Registro,
+                                Contrasena=user.Contrasena, 
+                                Numero_Telefononico_Movil=user.Numero_Telefononico_Movil, 
+                                Estatus=user.Estatus, 
+                                Fecha_Registro=user.Fecha_Registro, 
                                 Fecha_Actualizacion=user.Fecha_Actualizacion)
-                                
     db.add(db_user)
     db.commit()
     db.refresh(db_user)
     return db_user
 
-# Actualizar un usuario por ID
+# Actualizar un usuario por id
 def update_user(db:Session, id:int, user:schemas.users.UserUpdate):
     db_user = db.query(models.users.User).filter(models.users.User.ID == id).first()
     if db_user:
@@ -46,7 +47,7 @@ def update_user(db:Session, id:int, user:schemas.users.UserUpdate):
         db.refresh(db_user)
     return db_user
 
-# Eliminar un usuario por ID
+# Eliminar un usuario por id
 def delete_user(db:Session, id:int):
     db_user = db.query(models.users.User).filter(models.users.User.ID == id).first()
     if db_user:
